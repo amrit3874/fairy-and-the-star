@@ -15,7 +15,7 @@ function preload()
 	fairyVoice = loadSound("sound/JoyMusic.mp3");
 
 //ddufbdghffkf fgjgdjefefgngndhignehiengoenfkf fjffkffkf,g9egjmwigjneignwigwngiwjngfjf fkdmfgkgkghgungmbjgkerdilskeongmdhfkeielfeffeff
-function setup() {ff
+function setup() {
 	createCanvas(800, 750);
 
 	// fairyVoice.play();
@@ -31,8 +31,8 @@ function setup() {ff
 	engine = Engine.create();
 	world = engine.world;
 
-	starBody = Bodies.circle(650 , 30 , 5 , {restitution:0.5, isStatic:true});
-	World.add(world, starBody);
+	starbody = Bodies.circle(650 , 30 , 5 , {restitution:0.5, isStatic:true});
+	World.add(world, starbody);
 	
 	Engine.run(engine);
 
@@ -41,11 +41,27 @@ function setup() {ff
 
 function draw() {
   background(bgImg);
-
+ star.x=starbody.position.x;
+star.y=starbody.position.y;
+console.log(star.y);
+if(star.y> 470 && starbody.position.y> 470 ){ 
+	Matter.Body.setStatic(starbody,true);
+}
   drawSprites();
 
 }
 
 function keyPressed() {
+if(keyCode ===  RIGHT_ARROW){
+	fairy.x = fairy.x + 20;
 	//write code here
+}
+	if(keyCode ===   LEFT_ARROW){
+	fairy.x = fairy.x - 20;
+	//write code here
+}
+if(keyCode ===  RIGHT_ARROW){
+	 Matter.Body.setStatic(starbody, false);
+	//write code here
+}
 }
