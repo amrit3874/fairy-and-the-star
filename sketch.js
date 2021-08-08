@@ -15,7 +15,7 @@ function preload()
 	fairyVoice = loadSound("sound/JoyMusic.mp3");
 }
 
-//ddufbdghffkf fgjgdjefefgngndhignehiengoenfkf fjffkffkf,g9egjmwigjneignwigwngiwjngfjf fkdmfgkgkghgungmbjgkerdilskeongmdhfkeielfeffeff
+ 
 function setup() {
 	createCanvas(800, 750);
 
@@ -42,6 +42,7 @@ function setup() {
 
 function draw() {
   background(bgImg);
+	Engine.update(engine);
  star.x=starbody.position.x;
 star.y=starbody.position.y;
 console.log(star.y);
